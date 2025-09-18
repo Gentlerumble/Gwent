@@ -1,0 +1,27 @@
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.exe.config
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.exe
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.pdb
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.AssemblyReference.cache
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FPrincipal.resources
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.Properties.Resources.resources
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.GenerateResource.cache
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.CoreCompileInputs.cache
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.exe
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.pdb
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FormDeck.resources
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FormCimetiere.resources
+C:\Users\leofe\Desktop\Programmation évenementielle\Gwent\Gwent\bin\Debug\Musique\gwent.wav
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\bin\Debug\Musique\gwent.wav
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.exe.config
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.exe
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\bin\Debug\Gwent.pdb
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.AssemblyReference.cache
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.exe.config
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FPrincipal.resources
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FormCimetiere.resources
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.FormDeck.resources
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.Properties.Resources.resources
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.GenerateResource.cache
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.csproj.CoreCompileInputs.cache
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.exe
+C:\Users\leofe\Desktop\ancien cours\HEL\Programmation évenementielle\Gwent\Gwent\obj\Debug\Gwent.pdb

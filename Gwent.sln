@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gwent", "Gwent\Gwent.csproj", "{992A3773-9CD4-44A6-8187-640B1C8B47B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{992A3773-9CD4-44A6-8187-640B1C8B47B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992A3773-9CD4-44A6-8187-640B1C8B47B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992A3773-9CD4-44A6-8187-640B1C8B47B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992A3773-9CD4-44A6-8187-640B1C8B47B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {092A0084-3619-4F61-B973-55585FA4F360}
+	EndGlobalSection
+EndGlobal

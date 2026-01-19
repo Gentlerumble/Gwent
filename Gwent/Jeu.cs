@@ -8,6 +8,11 @@ using System.Windows.Forms;
 
 namespace Gwent
 {
+    // Classe principale gérant la logique du jeu :  
+    // - Création des joueurs
+    // - Définition de tous les decks disponibles (les 4 factions)
+    // - Distribution des cartes initiales
+    // - Gestion des pouvoirs passifs de faction
     public class Jeu
     {
         public Joueur Joueur1 { get; set; }
@@ -19,9 +24,9 @@ namespace Gwent
         public enum PouvoirPassifDeck
         {
             RoyaumesDuNord, // Pioche une carte en cas de victoire de manche
-            Monstres,       //garde une carte aléatoire sur le plateau après une manche
-            ScoiaTel,       //décide qui commence
-            Nilfgaard       //gagne les égalités
+            Monstres,       // garde une carte aléatoire sur le plateau après une manche
+            ScoiaTel,       // décide qui commence
+            Nilfgaard       // gagne les égalités
         }
 
         public Jeu(List<Carte> deckJ1, List<Carte> deckJ2, int indexDeckJ1, int indexDeckJ2)
@@ -49,6 +54,9 @@ namespace Gwent
             InitialiserDeck();
         }
 
+        // Initialise tous les decks disponibles dans le jeu.
+        // Crée les 4 factions avec toutes leurs cartes. 
+        // Chaque deck contient environ 40-50 cartes.
         private void InitialiserDeck()
         {
             deckDisponibles = new List<List<Carte>>();

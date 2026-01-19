@@ -1,0 +1,26 @@
+# Dossiers de build
+bin/
+obj/
+
+# Fichiers Visual Studio
+. vs/
+*. user
+*.suo
+*.userosscache
+*.sln. docstates
+
+# Fichiers de cache
+*. cache
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# Fichiers temporaires
+*.tmp
+*.temp
+~$*
+
+# Sauvegardes du jeu (optionnel - décommentez si vous ne voulez pas les inclure)
+# Saves/

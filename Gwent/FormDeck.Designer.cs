@@ -1,4 +1,7 @@
-﻿namespace Gwent
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Gwent
 {
     partial class FormDeck
     {
@@ -40,6 +43,12 @@
             this.pbMonstreJ2 = new System.Windows.Forms.PictureBox();
             this.pbNordJ2 = new System.Windows.Forms.PictureBox();
             this.bValiderDeck = new System.Windows.Forms.Button();
+            this.btnHost = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.txtHostAddress = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.lHostAddress = new System.Windows.Forms.Label();
+            this.lPort = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbNordJ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMonstreJ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbScoiaTelJ1)).BeginInit();
@@ -144,7 +153,7 @@
             // 
             // bValiderDeck
             // 
-            this.bValiderDeck.Location = new System.Drawing.Point(637, 225);
+            this.bValiderDeck.Location = new System.Drawing.Point(634, 51);
             this.bValiderDeck.Name = "bValiderDeck";
             this.bValiderDeck.Size = new System.Drawing.Size(111, 28);
             this.bValiderDeck.TabIndex = 10;
@@ -152,11 +161,69 @@
             this.bValiderDeck.UseVisualStyleBackColor = true;
             this.bValiderDeck.Click += new System.EventHandler(this.bValiderDeck_Click);
             // 
+            // btnHost
+            // 
+            this.btnHost.Location = new System.Drawing.Point(634, 281);
+            this.btnHost.Name = "btnHost";
+            this.btnHost.Size = new System.Drawing.Size(111, 28);
+            this.btnHost.TabIndex = 11;
+            this.btnHost.Text = "Héberger";
+            this.btnHost.UseVisualStyleBackColor = true;
+            this.btnHost.Click += new System.EventHandler(this.btnHost_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(634, 406);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(111, 28);
+            this.btnConnect.TabIndex = 12;
+            this.btnConnect.Text = "Se connecter";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // txtHostAddress
+            // 
+            this.txtHostAddress.Location = new System.Drawing.Point(634, 338);
+            this.txtHostAddress.Name = "txtHostAddress";
+            this.txtHostAddress.Size = new System.Drawing.Size(111, 20);
+            this.txtHostAddress.TabIndex = 13;
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(634, 378);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(111, 20);
+            this.txtPort.TabIndex = 14;
+            // 
+            // lHostAddress
+            // 
+            this.lHostAddress.AutoSize = true;
+            this.lHostAddress.Location = new System.Drawing.Point(631, 322);
+            this.lHostAddress.Name = "lHostAddress";
+            this.lHostAddress.Size = new System.Drawing.Size(94, 13);
+            this.lHostAddress.TabIndex = 15;
+            this.lHostAddress.Text = "Adresse de l\'hôte :";
+            // 
+            // lPort
+            // 
+            this.lPort.AutoSize = true;
+            this.lPort.Location = new System.Drawing.Point(631, 362);
+            this.lPort.Name = "lPort";
+            this.lPort.Size = new System.Drawing.Size(32, 13);
+            this.lPort.TabIndex = 16;
+            this.lPort.Text = "Port :";
+            // 
             // FormDeck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lPort);
+            this.Controls.Add(this.lHostAddress);
+            this.Controls.Add(this.txtPort);
+            this.Controls.Add(this.txtHostAddress);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnHost);
             this.Controls.Add(this.bValiderDeck);
             this.Controls.Add(this.pbNilfgaardJ2);
             this.Controls.Add(this.pbScoiaTelJ2);
@@ -182,6 +249,19 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
+            // Bouton Charger une partie
+            btnChargerPartie = new Button
+            {
+                Text = "Charger une partie",
+                Location = new Point(634, 130),
+                Size = new Size(111, 40),
+                BackColor = Color.DarkOrange,
+                ForeColor = Color.White
+            };
+            btnChargerPartie.Click += BtnChargerPartie_Click;
+            this.Controls.Add(btnChargerPartie);
+
         }
 
         #endregion
@@ -197,5 +277,11 @@
         private System.Windows.Forms.PictureBox pbMonstreJ2;
         private System.Windows.Forms.PictureBox pbNordJ2;
         private System.Windows.Forms.Button bValiderDeck;
+        private System.Windows.Forms.Button btnHost;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.TextBox txtHostAddress;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.Label lHostAddress;
+        private System.Windows.Forms.Label lPort;
     }
 }

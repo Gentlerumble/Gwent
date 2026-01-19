@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Gwent.Net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +15,13 @@ namespace Gwent
 {
     public partial class FormDeck : Form
     {
+        public bool HostSelected { get; set; } = false;
+        public bool ClientSelected { get; set; } = false;
 
+        public string HostAddress { get; private set; } = "127.0.0.1";
+        public int HostPort { get; private set; } = 12345;
+
+        public int LocalDeckIndex { get; private set; } = -1;
         public List<Carte> DeckJ1 { get; private set; }
         public List<Carte> DeckJ2 { get; private set; }
 
@@ -23,10 +31,16 @@ namespace Gwent
         private PictureBox pbSelectionneeJ1 = null;
         private PictureBox pbSelectionneeJ2 = null;
 
+        // Dans la classe FormDeck, ajoutez :
+        public bool ChargerPartieSelected { get; private set; } = false;
+        public GameSaveDto PartieSauvegardee { get; private set; }
+
+        private Button btnChargerPartie;
+
         private ToolTip toolTipDeck = new ToolTip();
 
         public FormDeck()
-        {  
+        {
             InitializeComponent();
             pbNordJ1.Image = Image.FromFile("Images\\dos_carte_J1.jpg");
             pbNordJ1.Tag = 0;
@@ -40,7 +54,7 @@ namespace Gwent
             pbNilfgaardJ1.Image = Image.FromFile("Images\\dos_carte_J3.jpg");
             pbNilfgaardJ1.Tag = 3;
 
-            
+
 
             pbNordJ2.Image = Image.FromFile("Images\\dos_carte_J1.jpg");
             pbNordJ2.Tag = 0;
@@ -232,5 +246,91 @@ namespace Gwent
             "Scoia'tael\nForces : Agilité, cartes puissantes\nFaiblesses : Peu de synergie,\nPouvoir passif : Choisit qui commence,\nPouvoir activable : Détruit la carte de mélée la plus forte adverse si le score de la zone Mélée de l'adversaire dépasse 10",
             "Nilfgaard\nForces : Espions, contrôle\nFaiblesses : Besoin de synergie,\nPouvoir passif : Gagne forcément les égalités,\nPouvoir activable : double le score des unités de Mélée"
         };
+
+        // Héberger : utilise la sélection J1 (gauche)
+        private void btnHost_Click(object sender, EventArgs e)
+        {
+            if (pbSelectionneeJ1 == null)
+            {
+                MessageBox.Show("Sélectionnez d'abord votre deck (gauche).");
+                return;
+            }
+
+            int port = HostPort;
+            if (this.Controls.ContainsKey("txtPort") && this.Controls["txtPort"] is TextBox tbPort && int.TryParse(tbPort.Text, out var p))
+                port = p;
+
+            HostSelected = true;
+            ClientSelected = false;
+            LocalDeckIndex = (int)pbSelectionneeJ1.Tag;
+            HostPort = port;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        // Se connecter : utilise la sélection J2 (droite)
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            if (pbSelectionneeJ2 == null)
+            {
+                MessageBox.Show("Sélectionnez d'abord votre deck (droite).");
+                return;
+            }
+
+            string host = HostAddress;
+            int port = HostPort;
+            if (this.Controls.ContainsKey("txtHostAddress") && this.Controls["txtHostAddress"] is TextBox tbHost && !string.IsNullOrWhiteSpace(tbHost.Text))
+                host = tbHost.Text.Trim();
+            if (this.Controls.ContainsKey("txtPort") && this.Controls["txtPort"] is TextBox tbPort && int.TryParse(tbPort.Text, out var p))
+                port = p;
+
+            HostSelected = false;
+            ClientSelected = true;
+            LocalDeckIndex = (int)pbSelectionneeJ2.Tag;
+            HostAddress = host;
+            HostPort = port;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private bool ValiderSelectionDecks()
+        {
+            if (pbSelectionneeJ1 == null || pbSelectionneeJ2 == null)
+            {
+                MessageBox.Show("Chaque joueur doit choisir un deck !");
+                return false;
+            }
+            return true;
+        }
+
+        private void BtnChargerPartie_Click(object sender, EventArgs e)
+        {
+            using (var formCharger = new FormChargerPartie())
+            {
+                if (formCharger.ShowDialog() == DialogResult.OK && formCharger.PartieSelectionnee != null)
+                {
+                    ChargerPartieSelected = true;
+                    PartieSauvegardee = formCharger.PartieSelectionnee;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+        }
+
+        private void PrepareDecksAndClose()
+        {
+            int indexDeckJ1 = (int)pbSelectionneeJ1.Tag;
+            int indexDeckJ2 = (int)pbSelectionneeJ2.Tag;
+            var decks = Jeu.AvoirDeckDispo();
+            DeckJ1 = new List<Carte>(decks[indexDeckJ1]);
+            DeckJ2 = new List<Carte>(decks[indexDeckJ2]);
+            IndexDeckJ1 = indexDeckJ1;
+            IndexDeckJ2 = indexDeckJ2;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
     }
 }

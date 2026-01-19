@@ -7,6 +7,8 @@ using static Gwent.Jeu;
 
 namespace Gwent
 {
+    // Représente un joueur dans le jeu Gwent. 
+    // Gère son deck, sa main, son cimetière et son pouvoir passif de faction.
     public class Joueur
     {
         public string Nom { get; set; }

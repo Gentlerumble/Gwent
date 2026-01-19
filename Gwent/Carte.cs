@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Gwent
 {
-
+    // Énumération définissant les types de cartes possibles. 
+    // Le type détermine où la carte peut être placée sur le plateau.
     public enum TypeCarte
     {
         Melee,
@@ -35,6 +37,10 @@ namespace Gwent
         Aucun,          
     }
 
+    // Représente une carte du jeu Gwent. 
+    // C'est la structure de données fondamentale utilisée partout dans le jeu.
+    // Cette classe est sérialisable en JSON grâce à Newtonsoft.Json.
+    // Elle peut être sauvegardée/chargée et envoyée via le réseau.
     public class Carte
     {
         public string Nom { get; set; }
@@ -54,6 +60,7 @@ namespace Gwent
             Pouvoir = PouvoirSpecial.Aucun; 
         }
 
+        [JsonConstructor]
         public Carte(string nom, int puissance, string imagePath, TypeCarte type, PouvoirSpecial pouvoir)
         {
             Nom = nom;
@@ -62,5 +69,7 @@ namespace Gwent
             Type = type;
             Pouvoir = pouvoir;
         }
+
+        public Carte() { } 
     }
 }

@@ -3,44 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\gestionnairereseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gestionnairereseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\gestionnairepouvoirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gestionnairepouvoirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\gamesavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gamesavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formdeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formdeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formcimetiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formcimetiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formchoixreprise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formchoixreprise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formchargerpartie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formchargerpartie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formapercudeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formapercudeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formaide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formaide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\net\\dtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\dtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\net\\netmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,24 +15,84 @@
       "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\gamestatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\net\\gamesavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\gamesavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\imagehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\imagehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\net\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\formdeck.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formdeck.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\gestionnaireui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\gestionnaireui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gestionnaireui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\imagehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\imagehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\gestionnairereseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gestionnairereseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\gestionnairepouvoirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gestionnairepouvoirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\gamesavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\gamesavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\net\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\net\\gamesavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\net\\gamesavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formdeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formdeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formaide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formaide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formapercudeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formapercudeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formchargerpartie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formchargerpartie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formchoixreprise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formchoixreprise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\formcimetiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\formcimetiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\jeu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\jeu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\joueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\joueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\partiegwent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\partiegwent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\plateaujoueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\plateaujoueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\gwent\\plateaujoueurcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\plateaujoueurcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|c:\\users\\leofe\\desktop\\progra\\gwent\\gwent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{992A3773-9CD4-44A6-8187-640B1C8B47B5}|Gwent\\Gwent.csproj|solutionrelative:gwent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,177 +102,262 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DtoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\DtoMapper.cs",
+              "RelativeDocumentMoniker": "Gwent\\Net\\DtoMapper.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\DtoMapper.cs",
+              "RelativeToolTip": "Gwent\\Net\\DtoMapper.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAIwF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:23:55.443Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormCimetiere.cs [Design]",
+              "DocumentIndex": 22,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Program.cs",
+              "RelativeDocumentMoniker": "Gwent\\Program.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Program.cs",
+              "RelativeToolTip": "Gwent\\Program.cs",
+              "ViewState": "AgIAAH8BAAAAAAAAAAAjwJYBAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:48.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PlateauJoueurControl.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PlateauJoueurControl.cs",
+              "RelativeDocumentMoniker": "Gwent\\PlateauJoueurControl.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PlateauJoueurControl.cs",
+              "RelativeToolTip": "Gwent\\PlateauJoueurControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:44.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PlateauJoueur.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PlateauJoueur.cs",
+              "RelativeDocumentMoniker": "Gwent\\PlateauJoueur.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PlateauJoueur.cs",
+              "RelativeToolTip": "Gwent\\PlateauJoueur.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAIA6wC8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:33.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PartieGwent.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PartieGwent.cs",
+              "RelativeDocumentMoniker": "Gwent\\PartieGwent.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\PartieGwent.cs",
+              "RelativeToolTip": "Gwent\\PartieGwent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:28.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Joueur.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Joueur.cs",
+              "RelativeDocumentMoniker": "Gwent\\Joueur.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Joueur.cs",
+              "RelativeToolTip": "Gwent\\Joueur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:24.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Jeu.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Jeu.cs",
+              "RelativeDocumentMoniker": "Gwent\\Jeu.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Jeu.cs",
+              "RelativeToolTip": "Gwent\\Jeu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:01:20.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormCimetiere.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormCimetiere.cs",
               "RelativeDocumentMoniker": "Gwent\\FormCimetiere.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormCimetiere.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormCimetiere.cs [Design]",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormCimetiere.cs",
+              "RelativeToolTip": "Gwent\\FormCimetiere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:11.675Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-19T08:00:16.595Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormChoixReprise.cs [Design]",
+              "DocumentIndex": 15,
+              "Title": "FormChoixReprise.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChoixReprise.cs",
               "RelativeDocumentMoniker": "Gwent\\FormChoixReprise.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChoixReprise.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormChoixReprise.cs [Design]",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChoixReprise.cs",
+              "RelativeToolTip": "Gwent\\FormChoixReprise.cs",
+              "ViewState": "AgIAAFMBAAAAAAAAAAAjwGYBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:10.852Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-19T07:59:34.897Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormChargerPartie.cs [Design]",
+              "DocumentIndex": 14,
+              "Title": "FormChargerPartie.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChargerPartie.cs",
               "RelativeDocumentMoniker": "Gwent\\FormChargerPartie.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChargerPartie.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormChargerPartie.cs [Design]",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormChargerPartie.cs",
+              "RelativeToolTip": "Gwent\\FormChargerPartie.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDgAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:10.074Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-19T07:59:30.285Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormApercuDeck.cs [Design]",
+              "DocumentIndex": 13,
+              "Title": "FormApercuDeck.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormApercuDeck.cs",
               "RelativeDocumentMoniker": "Gwent\\FormApercuDeck.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormApercuDeck.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormApercuDeck.cs [Design]",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormApercuDeck.cs",
+              "RelativeToolTip": "Gwent\\FormApercuDeck.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:08.991Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormAide.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormAide.cs",
-              "RelativeDocumentMoniker": "Gwent\\FormAide.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormAide.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormAide.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:07.989Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Form1.cs",
-              "RelativeDocumentMoniker": "Gwent\\Form1.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Form1.cs [Design]",
-              "RelativeToolTip": "Gwent\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T17:02:06.507Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-19T07:59:24.763Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "FormAide.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormAide.cs",
+              "RelativeDocumentMoniker": "Gwent\\FormAide.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormAide.cs",
+              "RelativeToolTip": "Gwent\\FormAide.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:59:20.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormDeck.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.cs",
+              "RelativeDocumentMoniker": "Gwent\\FormDeck.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.cs",
+              "RelativeToolTip": "Gwent\\FormDeck.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAtwBQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:55:41.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Form1.cs",
+              "RelativeDocumentMoniker": "Gwent\\Form1.cs",
+              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Form1.cs",
+              "RelativeToolTip": "Gwent\\Form1.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAjwDcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:53:02.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "GameSaveDto.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\GameSaveDto.cs",
               "RelativeDocumentMoniker": "Gwent\\Net\\GameSaveDto.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\GameSaveDto.cs",
               "RelativeToolTip": "Gwent\\Net\\GameSaveDto.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAA4wB8AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:58:28.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\Client.cs",
               "RelativeDocumentMoniker": "Gwent\\Net\\Client.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\Client.cs",
               "RelativeToolTip": "Gwent\\Net\\Client.cs",
-              "ViewState": "AgIAAM0AAAAAAAAAAAAcwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAmwLgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:57:23.874Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FormDeck.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.Designer.cs",
-              "RelativeDocumentMoniker": "Gwent\\FormDeck.Designer.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.Designer.cs",
-              "RelativeToolTip": "Gwent\\FormDeck.Designer.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T16:56:37.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormDeck.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.cs",
-              "RelativeDocumentMoniker": "Gwent\\FormDeck.cs",
-              "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\FormDeck.cs [Design]",
-              "RelativeToolTip": "Gwent\\FormDeck.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T16:56:30.863Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "GameSaveManager.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GameSaveManager.cs",
               "RelativeDocumentMoniker": "Gwent\\GameSaveManager.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GameSaveManager.cs",
               "RelativeToolTip": "Gwent\\GameSaveManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQBAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAnwEAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:55:08.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "GestionnairePouvoirs.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GestionnairePouvoirs.cs",
               "RelativeDocumentMoniker": "Gwent\\GestionnairePouvoirs.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GestionnairePouvoirs.cs",
               "RelativeToolTip": "Gwent\\GestionnairePouvoirs.cs",
-              "ViewState": "AgIAABQBAAAAAAAAAAAiwAcAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABQBAAAAAAAAAAAiwCABAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:54:39.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "GestionnaireReseau.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GestionnaireReseau.cs",
               "RelativeDocumentMoniker": "Gwent\\GestionnaireReseau.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GestionnaireReseau.cs",
               "RelativeToolTip": "Gwent\\GestionnaireReseau.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAnwDYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:53:15.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "GestionnaireUI.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\GestionnaireUI.cs",
               "RelativeDocumentMoniker": "Gwent\\GestionnaireUI.cs",
@@ -261,39 +370,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 3,
               "Title": "ImageHelper.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\ImageHelper.cs",
               "RelativeDocumentMoniker": "Gwent\\ImageHelper.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\ImageHelper.cs",
               "RelativeToolTip": "Gwent\\ImageHelper.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwAgAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T16:52:32.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "GameStateDto.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\GameStateDto.cs",
               "RelativeDocumentMoniker": "Gwent\\Net\\GameStateDto.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\GameStateDto.cs",
               "RelativeToolTip": "Gwent\\Net\\GameStateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T12:14:50.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "NetMessage.cs",
               "DocumentMoniker": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\NetMessage.cs",
               "RelativeDocumentMoniker": "Gwent\\Net\\NetMessage.cs",
               "ToolTip": "C:\\Users\\leofe\\Desktop\\Progra\\Gwent\\Gwent\\Net\\NetMessage.cs",
               "RelativeToolTip": "Gwent\\Net\\NetMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T12:12:04.447Z",
               "EditorCaption": ""

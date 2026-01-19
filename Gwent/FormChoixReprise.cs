@@ -14,7 +14,7 @@ namespace Gwent
     public partial class FormChoixReprise : Form
     {
         public ModeReprise ModeChoisi { get; private set; } = ModeReprise.Annuler;
-        public string AdresseServeur { get; private set; } = "127.0.0.1";
+        public string AdresseServeur { get; private set; } = " 172.20.10.2";
         public int PortServeur { get; private set; } = 12345;
 
         private Panel _panelChoixMode;
@@ -306,7 +306,7 @@ namespace Gwent
             // TextBox IP
             var txtIP = new TextBox
             {
-                Text = "127.0.0.1",
+                Text = " 172.20.10.2",
                 Dock = DockStyle.Fill,
                 Font = new Font("Segoe UI", 11),
                 Margin = new Padding(5)
@@ -356,7 +356,7 @@ namespace Gwent
                 AdresseServeur = txtIP.Text.Trim();
                 if (string.IsNullOrEmpty(AdresseServeur))
                 {
-                    AdresseServeur = "127.0.0.1";
+                    AdresseServeur = " 172.20.10.2";
                 }
 
                 if (int.TryParse(txtPort.Text.Trim(), out int port) && port > 0 && port < 65536)

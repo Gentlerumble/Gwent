@@ -62,9 +62,9 @@ namespace Gwent
                     NumeroManche = partie.NumeroManche,
                     EstPartieReseau = estReseau,
                     LocalPlayerIndex = localPlayerIndex,
-                    HostAddress = hostAddress ?? "127.0.0.1",
+                    HostAddress = hostAddress ?? " 172.20.10.2",
                     HostPort = hostPort > 0 ? hostPort : 12345,
-                    Joueur1 = CreerPlayerSaveDto(partie.Plateau1, controlJ1, partie.Jeu.Joueur1),
+                    Joueur1 = CreerPlayerSaveDto(partie.Plateau1, controlJ1, partie.Jeu.Joueur1)    ,
                     Joueur2 = CreerPlayerSaveDto(partie.Plateau2, controlJ2, partie.Jeu.Joueur2)
                 };
 

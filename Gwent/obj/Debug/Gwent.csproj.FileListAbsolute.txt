@@ -41,4 +41,3 @@ C:\Users\leofe\Desktop\Progra\Gwent\Gwent\obj\Debug\Gwent.csproj.CoreCompileInpu
 C:\Users\leofe\Desktop\Progra\Gwent\Gwent\obj\Debug\Gwent.csproj.Up2Date
 C:\Users\leofe\Desktop\Progra\Gwent\Gwent\obj\Debug\Gwent.exe
 C:\Users\leofe\Desktop\Progra\Gwent\Gwent\obj\Debug\Gwent.pdb
-C:\Users\leofe\Desktop\Progra\Gwent\Gwent\obj\Debug\Gwent.exe.config

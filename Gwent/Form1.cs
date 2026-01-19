@@ -54,7 +54,7 @@ namespace Gwent
 
         // Sauvegarde
         private Button _boutonSauvegarder;
-        private string _hostAddress = "127.0.0.1";
+        private string _hostAddress = " 172.20.10.2";
         private int _hostPort = 12345;
 
         public bool SuppressInitialGameStateOnConnect { get; set; } = false;
@@ -1621,7 +1621,7 @@ Effets météo :
             _localPlayerIndex = localPlayerIndex;
             _server = server;
             _client = client;
-            _hostAddress = "127.0.0.1";
+            _hostAddress = "192.168.1.4";
             _hostPort = 12345;
 
             System.Diagnostics.Debug.WriteLine($"[ConfigurerModeReseau] APRES: _isNetworkGame={_isNetworkGame}, _localPlayerIndex={_localPlayerIndex}");

@@ -18,7 +18,7 @@ namespace Gwent
         public bool HostSelected { get; set; } = false;
         public bool ClientSelected { get; set; } = false;
 
-        public string HostAddress { get; private set; } = "127.0.0.1";
+        public string HostAddress { get; private set; } = " 172.20.10.2";
         public int HostPort { get; private set; } = 12345;
 
         public int LocalDeckIndex { get; private set; } = -1;

@@ -175,7 +175,7 @@ namespace Gwent
                 var lbl = new Label
                 {
                     Dock = DockStyle.Fill,
-                    Text = $"En attente d'un joueur sur le port 12345...\n\nSauvegarde :  {save.SaveName}\nVotre IP locale : 127.0.0.1",
+                    Text = $"En attente d'un joueur sur le port 12345...\n\nSauvegarde :  {save.SaveName}\nVotre IP locale :  172.20.10.2",
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Font = new System.Drawing.Font("Segoe UI", 10)
                 };
@@ -400,7 +400,7 @@ namespace Gwent
                 var lbl = new Label
                 {
                     Dock = DockStyle.Fill,
-                    Text = $"En attente du client sur 127.0.0.1:{formDeck.HostPort}…",
+                    Text = $"En attente du client sur  172.20.10.2:{formDeck.HostPort}…",
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter
                 };
                 waitForm.Controls.Add(lbl);

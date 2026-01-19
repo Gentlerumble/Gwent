@@ -1068,31 +1068,35 @@ namespace Gwent
             if (plateauControl == null) return;
 
             System.Diagnostics.Debug.WriteLine($"[OnCarteClicked] Carte={e.Carte.Nom}, PlateauIndex={plateauControl.IndexJoueur}");
-            System.Diagnostics.Debug.WriteLine($"[OnCarteClicked] _isNetworkGame={_isNetworkGame}, _localPlayerIndex={_localPlayerIndex}, IndexJoueurCourant={_partie.IndexJoueurCourant}");
+            System.Diagnostics.Debug.WriteLine($"[OnCarteClicked] _modeLeurre={_modeLeurre}");
+
+            // Mode Leurre : gérer le remplacement de carte sur le plateau
+            if (_modeLeurre)
+            {
+                GererModeLeurre(e);
+                return;
+            }
 
             // Vérifier si c'est le tour du bon joueur
             if (_isNetworkGame)
             {
-                // En mode réseau: vérifier que c'est mon tour
                 if (_localPlayerIndex != _partie.IndexJoueurCourant)
                 {
                     System.Diagnostics.Debug.WriteLine("[OnCarteClicked] BLOQUÉ:  Pas mon tour (réseau)");
                     return;
                 }
 
-                // Vérifier que je clique sur MES cartes (pas celles de l'adversaire)
                 bool estMaMain = (_localPlayerIndex == 0 && e.ZoneSource == _zoneMainJ1) ||
                                  (_localPlayerIndex == 1 && e.ZoneSource == _zoneMainJ2);
 
                 if (!estMaMain)
                 {
-                    System.Diagnostics.Debug.WriteLine("[OnCarteClicked] BLOQUÉ:  Ce n'est pas ma main");
+                    System.Diagnostics.Debug.WriteLine("[OnCarteClicked] BLOQUÉ: Ce n'est pas ma main");
                     return;
                 }
             }
             else
             {
-                // En mode local: vérifier que c'est le tour du joueur qui clique
                 bool estMainJ1 = (e.ZoneSource == _zoneMainJ1);
                 bool estMainJ2 = (e.ZoneSource == _zoneMainJ2);
 
@@ -1109,15 +1113,6 @@ namespace Gwent
             }
 
             System.Diagnostics.Debug.WriteLine("[OnCarteClicked] AUTORISÉ:  Traitement de la carte");
-
-            // Mode Leurre: remplacer une carte
-            if (_modeLeurre)
-            {
-                GererModeLeurre(e);
-                return;
-            }
-
-            // Sélection de carte normale
             SelectionnerCarte(e);
         }
 
@@ -1331,7 +1326,47 @@ namespace Gwent
                 return;
             }
 
-            // Envoyer via réseau
+            // *** NOUVEAU : Gérer les cartes supplémentaires (Rassembler) ***
+            if (resultat.CartesSupplementaires != null && resultat.CartesSupplementaires.Count > 0)
+            {
+                foreach (var carteSup in resultat.CartesSupplementaires)
+                {
+                    plateauControl.AjouterCarteZone(zoneCible, carteSup);
+
+                    // Envoyer chaque carte supplémentaire via réseau
+                    if (_isNetworkGame)
+                    {
+                        await EnvoyerPlayCardAsync(carteSup, zoneCible);
+                    }
+                }
+            }
+
+            // *** NOUVEAU : Gérer les cartes à détruire (Brûlure) ***
+            if (resultat.CartesADetruire != null && resultat.CartesADetruire.Count > 0)
+            {
+                foreach (var (carteADetruire, zone, proprio) in resultat.CartesADetruire)
+                {
+                    // Retirer visuellement
+                    foreach (Control ctrl in zone.Controls)
+                    {
+                        if (ctrl is PictureBox pb && pb.Tag is Carte c && c == carteADetruire)
+                        {
+                            zone.Controls.Remove(pb);
+                            break;
+                        }
+                    }
+                    // Ajouter au cimetière
+                    proprio.Cimetiere.Add(carteADetruire);
+                }
+            }
+
+            // *** NOUVEAU :  Vider les zones météo si nécessaire (Soleil) ***
+            if (resultat.ViderZonesMeteo)
+            {
+                ViderToutesZonesMeteo();
+            }
+
+            // Envoyer la carte principale via réseau
             if (_isNetworkGame)
             {
                 await EnvoyerPlayCardAsync(carte, zoneCible);
@@ -1342,10 +1377,8 @@ namespace Gwent
             {
                 if (_isNetworkGame)
                 {
-                    // En réseau :  passer au tour de l'adversaire
                     int adversaireIndex = _localPlayerIndex == 0 ? 1 : 0;
                     _partie.IndexJoueurCourant = adversaireIndex;
-                    System.Diagnostics.Debug.WriteLine($"[PlacerCarte] Tour passé à adversaireIndex={adversaireIndex}");
                 }
                 else
                 {
@@ -1357,13 +1390,55 @@ namespace Gwent
             RafraichirTout();
         }
 
+       
+
+        private void ViderToutesZonesMeteo()
+        {
+            // Vider les zones météo des deux joueurs
+            foreach (var zone in _partie.Plateau1.ZonesMeteo())
+            {
+                if (zone != null)
+                {
+                    foreach (Control ctrl in zone.Controls.OfType<PictureBox>().ToList())
+                    {
+                        if (ctrl is PictureBox pb && pb.Tag is Carte carte)
+                        {
+                            _partie.Plateau1.Joueur.Cimetiere.Add(carte);
+                        }
+                        zone.Controls.Remove(ctrl);
+                        ctrl.Dispose();
+                    }
+                }
+            }
+
+            foreach (var zone in _partie.Plateau2.ZonesMeteo())
+            {
+                if (zone != null)
+                {
+                    foreach (Control ctrl in zone.Controls.OfType<PictureBox>().ToList())
+                    {
+                        if (ctrl is PictureBox pb && pb.Tag is Carte carte)
+                        {
+                            _partie.Plateau2.Joueur.Cimetiere.Add(carte);
+                        }
+                        zone.Controls.Remove(ctrl);
+                        ctrl.Dispose();
+                    }
+                }
+            }
+        }
+
         private void GererModeLeurre(CarteClickEventArgs e)
         {
-            // Vérifier que la carte est sur le plateau du joueur courant
+            // Vérifier que la carte est sur le plateau du joueur courant (pas dans la main)
             var plateau = _partie.PlateauCourant;
-            if (!plateau.ZonesCombat().Contains(e.ZoneSource))
+
+            // Vérifier que c'est une zone de combat (pas la main)
+            bool estZoneCombat = plateau.ZonesCombat().Contains(e.ZoneSource);
+
+            if (!estZoneCombat)
             {
-                AfficherMessage("Vous ne pouvez remplacer qu'une carte sur votre plateau.");
+                AfficherMessage("Vous devez sélectionner une carte sur votre plateau (zones de combat).");
                 return;
             }
 
@@ -1374,8 +1449,10 @@ namespace Gwent
                 return;
             }
 
-            // Échanger les cartes
+            // Échanger les cartes :  retirer la carte du plateau
             e.ZoneSource.Controls.Remove(e.PictureBox);
+
+            // Ajouter la carte retirée à la main du joueur
             _partie.JoueurCourant.Main.Add(e.Carte);
 
             // Quitter le mode Leurre
@@ -1385,9 +1462,19 @@ namespace Gwent
 
             AfficherMessage($"Leurre :  {e.Carte.Nom} retourne dans votre main !");
 
+            // Terminer le tour
+            if (_isNetworkGame)
+            {
+                int adversaireIndex = _localPlayerIndex == 0 ? 1 : 0;
+                _partie.IndexJoueurCourant = adversaireIndex;
+            }
+            else
+            {
+                _partie.TerminerTour();
+            }
+
             ForceRechargerMains();
             RafraichirTout();
-            _partie.TerminerTour();
         }
 
         private async void OnPasserClicked(object sender, EventArgs e)

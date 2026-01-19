@@ -105,18 +105,22 @@ namespace Gwent
 
         private void PasserAuJoueurSuivant()
         {
+            // Si J1 a passé, c'est toujours au tour de J2
             if (Plateau1.APasse && !Plateau2.APasse)
             {
                 IndexJoueurCourant = 1;
             }
+            // Si J2 a passé, c'est toujours au tour de J1
             else if (Plateau2.APasse && !Plateau1.APasse)
             {
                 IndexJoueurCourant = 0;
             }
-            else
+            // Si personne n'a passé, on alterne normalement
+            else if (!Plateau1.APasse && !Plateau2.APasse)
             {
                 IndexJoueurCourant = (IndexJoueurCourant == 0) ? 1 : 0;
             }
+            // Si les deux ont passé, on ne devrait pas être ici (géré par TerminerManche)
 
             TourChange?.Invoke();
             EtatChange?.Invoke();

@@ -77,12 +77,24 @@ namespace Gwent
                 return new ResultatPouvoir { TerminerTour = true };
             }
 
-            var carteChoisie = _choisirCarteCimetiere?.Invoke(plateau.Joueur.Cimetiere);
+            // Filtrer pour ne garder que les cartes de combat (pas les cartes météo/effet)
+            var cartesRecuperables = plateau.Joueur.Cimetiere
+                .Where(c => c.Type == TypeCarte.Melee || c.Type == TypeCarte.Distance || c.Type == TypeCarte.Siege)
+                .ToList();
+
+            if (cartesRecuperables.Count == 0)
+            {
+                _afficherMessage("Aucune carte récupérable dans le cimetière.");
+                return new ResultatPouvoir { TerminerTour = true };
+            }
+
+            var carteChoisie = _choisirCarteCimetiere?.Invoke(cartesRecuperables);
             if (carteChoisie != null)
             {
                 plateau.Joueur.Cimetiere.Remove(carteChoisie);
-                // La carte sera ajoutée à la zone appropriée par l'appelant
-                _afficherMessage($"{carteChoisie.Nom} a été ressuscitée !");
+                // Ajouter la carte à la main du joueur pour qu'il puisse la jouer
+                plateau.Joueur.Main.Add(carteChoisie);
+                _afficherMessage($"{carteChoisie.Nom} a été ressuscitée et ajoutée à votre main !");
             }
 
             return new ResultatPouvoir { TerminerTour = true };
@@ -236,13 +248,13 @@ namespace Gwent
             return new ResultatPouvoir { TerminerTour = true, ViderZonesMeteo = true };
         }
 
-        public void ExecuterPouvoirDeck(PlateauJoueur plateau, PlateauJoueur adversaire)
+        public ResultatPouvoir ExecuterPouvoirDeck(PlateauJoueur plateau, PlateauJoueur adversaire)
         {
             var validation = ValidateurAction.ValiderPouvoirDeck(plateau, adversaire);
             if (!validation.EstValide)
             {
                 _afficherMessage(validation.MessageErreur);
-                return;
+                return new ResultatPouvoir { TerminerTour = false };
             }
 
             plateau.PouvoirUtilise = true;
@@ -250,37 +262,43 @@ namespace Gwent
             switch (plateau.Joueur.PouvoirPassif)
             {
                 case Jeu.PouvoirPassifDeck.RoyaumesDuNord:
-                    ExecuterMeteoSoleil(plateau, adversaire);
-                    break;
+                    return ExecuterMeteoSoleil(plateau, adversaire);
 
                 case Jeu.PouvoirPassifDeck.Monstres:
-                    ExecuterMedic(plateau, null);
-                    break;
+                    return ExecuterMedic(plateau, null);
 
                 case Jeu.PouvoirPassifDeck.ScoiaTel:
-                    ExecuterBrulureMeleeAdverse(adversaire);
-                    break;
+                    return ExecuterBrulureMeleeAdverse(adversaire);
 
                 case Jeu.PouvoirPassifDeck.Nilfgaard:
                     plateau.ChargeMeleeActive = true;
                     _afficherMessage("Pouvoir Nilfgaard : la puissance de votre mêlée est doublée !");
-                    break;
+                    return new ResultatPouvoir { TerminerTour = true };
+
+                default:
+                    return new ResultatPouvoir { TerminerTour = true };
             }
         }
 
-        private void ExecuterBrulureMeleeAdverse(PlateauJoueur adversaire)
+        private ResultatPouvoir ExecuterBrulureMeleeAdverse(PlateauJoueur adversaire)
         {
             var cartes = CalculateurScore.ExtraireCartes(adversaire.ZoneMelee);
             if (cartes.Count == 0)
             {
                 _afficherMessage("Aucune carte à brûler !");
-                return;
+                return new ResultatPouvoir { TerminerTour = true };
             }
 
             int maxPuissance = cartes.Max(c => c.Puissance);
             var aBruler = cartes.Where(c => c.Puissance == maxPuissance).ToList();
 
             _afficherMessage($"Pouvoir Scoia'Tael : {aBruler.Count} carte(s) brûlées !");
+
+            return new ResultatPouvoir
+            {
+                TerminerTour = true,
+                CartesADetruire = aBruler.Select(c => (c, adversaire.ZoneMelee, adversaire.Joueur)).ToList()
+            };
         }
     }
 

@@ -623,7 +623,7 @@ namespace Gwent
             return panel;
         }
 
-        private void BoutonSauvegarder_Click(object sender, EventArgs e)
+        private async void BoutonSauvegarder_Click(object sender, EventArgs e)
         {
             // Demander un nom pour la sauvegarde
             string nomSauvegarde = null;
@@ -688,8 +688,8 @@ namespace Gwent
                 }
             }
 
-            // Sauvegarder
-            bool success = GameSaveManager.SauvegarderPartie(
+            // Construire le DTO de sauvegarde (pour écriture locale + envoi réseau éventuel)
+            var saveDto = GameSaveManager.ConstruireDtoSauvegarde(
                 _partie,
                 _plateauControlJ1,
                 _plateauControlJ2,
@@ -700,10 +700,18 @@ namespace Gwent
                 nomSauvegarde
             );
 
+            bool success = GameSaveManager.EcrireSauvegarde(saveDto);
+
             if (success)
             {
                 MessageBox.Show($"Partie sauvegardée avec succès !\n\nNom :  {nomSauvegarde}",
                     "Sauvegarde", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Si en réseau : envoyer le même DTO au pair pour qu'il crée la sauvegarde localement
+                if (_isNetworkGame)
+                {
+                    await EnvoyerSaveGameAsync(saveDto);
+                }
             }
             else
             {
@@ -712,9 +720,28 @@ namespace Gwent
             }
         }
 
-        /// <summary>
-        /// Charge l'état d'une partie sauvegardée
-        /// </summary>
+        private async System.Threading.Tasks.Task EnvoyerSaveGameAsync(GameSaveDto save)
+        {
+            var msg = new NetMessage
+            {
+                Type = MessageType.SaveGame,
+                Payload = JsonConvert.SerializeObject(save)
+            };
+
+            System.Diagnostics.Debug.WriteLine($"[EnvoyerSaveGameAsync] Envoi sauvegarde '{save.SaveName}'");
+
+            try
+            {
+                if (_server != null) await _server.SendAsync(msg);
+                else if (_client != null) await _client.SendAsync(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[EnvoyerSaveGameAsync] Erreur:  {ex.Message}");
+            }
+        }
+
+        // Charge l'état d'une partie sauvegardée
         public void ChargerDepuisSauvegarde(GameSaveDto save)
         {
             if (save == null) return;
@@ -823,6 +850,40 @@ namespace Gwent
 
             overlay.Controls.Add(label);
             return overlay;
+        }
+
+        private void GererSaveGameRecu(NetMessage msg)
+        {
+            try
+            {
+                var dto = JsonConvert.DeserializeObject<GameSaveDto>(msg.Payload);
+                if (dto == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("[GererSaveGameRecu] DTO null");
+                    return;
+                }
+
+                // Adapter le point de vue local pour cette machine (facultatif mais plus cohérent)
+                dto.LocalPlayerIndex = _localPlayerIndex;
+                dto.EstPartieReseau = true;
+
+                bool ok = GameSaveManager.EcrireSauvegarde(dto);
+
+                System.Diagnostics.Debug.WriteLine(ok
+                    ? $"[GererSaveGameRecu] Sauvegarde écrite: {dto.SaveName}"
+                    : "[GererSaveGameRecu] Échec écriture sauvegarde");
+
+                // Feedback discret à l'utilisateur
+                if (ok)
+                {
+                    MessageBox.Show($"Sauvegarde reçue et créée localement : {dto.SaveName}",
+                        "Sauvegarde réseau", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[GererSaveGameRecu] Erreur: {ex.Message}");
+            }
         }
 
         private void AbonnerEvenements()
@@ -1430,15 +1491,11 @@ namespace Gwent
 
         private void GererModeLeurre(CarteClickEventArgs e)
         {
-            // Vérifier que la carte est sur le plateau du joueur courant (pas dans la main)
+            // Vérifier que la carte est sur le plateau du joueur courant
             var plateau = _partie.PlateauCourant;
-
-            // Vérifier que c'est une zone de combat (pas la main)
-            bool estZoneCombat = plateau.ZonesCombat().Contains(e.ZoneSource);
-
-            if (!estZoneCombat)
+            if (!plateau.ZonesCombat().Contains(e.ZoneSource))
             {
-                AfficherMessage("Vous devez sélectionner une carte sur votre plateau (zones de combat).");
+                AfficherMessage("Vous ne pouvez remplacer qu'une carte sur votre plateau.");
                 return;
             }
 
@@ -1449,10 +1506,8 @@ namespace Gwent
                 return;
             }
 
-            // Échanger les cartes :  retirer la carte du plateau
+            // Échanger les cartes
             e.ZoneSource.Controls.Remove(e.PictureBox);
-
-            // Ajouter la carte retirée à la main du joueur
             _partie.JoueurCourant.Main.Add(e.Carte);
 
             // Quitter le mode Leurre
@@ -1462,14 +1517,25 @@ namespace Gwent
 
             AfficherMessage($"Leurre :  {e.Carte.Nom} retourne dans votre main !");
 
-            // Terminer le tour
+            ForceRechargerMains();
+            RafraichirTout();
+
+            // CORRECTION : Gérer correctement le passage de tour
             if (_isNetworkGame)
             {
-                int adversaireIndex = _localPlayerIndex == 0 ? 1 : 0;
-                _partie.IndexJoueurCourant = adversaireIndex;
+                // En réseau :  envoyer l'action et passer au tour adverse si l'adversaire n'a pas passé
+                // TODO:  Envoyer l'action Leurre via réseau
+
+                if (!_partie.PlateauAdversaire.APasse)
+                {
+                    int adversaireIndex = _localPlayerIndex == 0 ? 1 : 0;
+                    _partie.IndexJoueurCourant = adversaireIndex;
+                }
+                // Si l'adversaire a passé, on reste sur notre tour
             }
             else
             {
+                // En local : utiliser la logique de TerminerTour qui gère déjà le cas où l'adversaire a passé
                 _partie.TerminerTour();
             }
 
@@ -1775,6 +1841,10 @@ Effets météo :
                 case MessageType.Pass:
                     GererPassRecu(msg);
                     break;
+
+                case MessageType.SaveGame:
+                    GererSaveGameRecu(msg);
+                    break;
             }
         }
 
@@ -1796,14 +1866,13 @@ Effets météo :
                 return;
             }
 
-            System.Diagnostics.Debug.WriteLine($"[GererPlayCardRecu] Carte={dto.CardName}, PlayerIndex={dto.PlayerIndex}, Zone={dto.Zone}");
-
+            string localImagePath = ImageHelper.ToAbsolutePath(dto.ImagePath);
+            System.Diagnostics.Debug.WriteLine($"[GererPlayCardRecu] ImagePath converti:  {dto.ImagePath} -> {localImagePath}");
             // Recréer l'objet Carte
             var carte = new Carte(
                 dto.CardName,
                 dto.Power,
-                dto.ImagePath,
-                (TypeCarte)dto.Type,
+                localImagePath, (TypeCarte)dto.Type,
                 (PouvoirSpecial)dto.Pouvoir
             );
 
@@ -1941,7 +2010,7 @@ Effets météo :
                 PlayerIndex = _localPlayerIndex,
                 Zone = GetNomZone(zone),
                 Power = carte.Puissance,
-                ImagePath = carte.ImagePath,
+                ImagePath = ImageHelper.ToRelativePath(carte.ImagePath),
                 Type = (int)carte.Type,
                 Pouvoir = (int)carte.Pouvoir
             };

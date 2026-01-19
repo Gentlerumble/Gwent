@@ -13,6 +13,7 @@ namespace Gwent.Net
         Ack,
         Error,
         TurnSwitched,
+        SaveGame
     }
 
     public class NetMessage

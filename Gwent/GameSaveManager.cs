@@ -41,36 +41,48 @@ namespace Gwent
             return SaveDirectory;
         }
 
-        // Sauvegarde une partie en cours
-        public static bool SauvegarderPartie(PartieGwent partie, PlateauJoueurControl controlJ1, PlateauJoueurControl controlJ2,
-            bool estReseau, int localPlayerIndex, string hostAddress, int hostPort, string nomSauvegarde = null)
+        // Construit un DTO de sauvegarde sans écrire de fichier (utile pour réseau)
+        public static GameSaveDto ConstruireDtoSauvegarde(
+            PartieGwent partie,
+            PlateauJoueurControl controlJ1,
+            PlateauJoueurControl controlJ2,
+            bool estReseau,
+            int localPlayerIndex,
+            string hostAddress,
+            int hostPort,
+            string nomSauvegarde = null)
+        {
+            var save = new GameSaveDto
+            {
+                SaveId = Guid.NewGuid().ToString(),
+                SaveName = nomSauvegarde ?? $"Partie_{DateTime.Now:yyyyMMdd_HHmmss}",
+                SaveDate = DateTime.Now,
+                IndexJoueurCourant = partie.IndexJoueurCourant,
+                NumeroManche = partie.NumeroManche,
+                EstPartieReseau = estReseau,
+                LocalPlayerIndex = localPlayerIndex,
+                HostAddress = hostAddress ?? " 172.20.10.2",
+                HostPort = hostPort > 0 ? hostPort : 12345,
+                Joueur1 = CreerPlayerSaveDto(partie.Plateau1, controlJ1, partie.Jeu.Joueur1),
+                Joueur2 = CreerPlayerSaveDto(partie.Plateau2, controlJ2, partie.Jeu.Joueur2)
+            };
+
+            // Déterminer l'index du deck
+            save.Joueur1.IndexDeck = GetIndexDeck(partie.Jeu.Joueur1.PouvoirPassif);
+            save.Joueur2.IndexDeck = GetIndexDeck(partie.Jeu.Joueur2.PouvoirPassif);
+
+            return save;
+        }
+
+        // Écrit une sauvegarde à partir d'un DTO (utilisé côté local et à la réception réseau)
+        public static bool EcrireSauvegarde(GameSaveDto save)
         {
             try
             {
-                // S'assurer que le dossier existe
                 if (!Directory.Exists(SaveDirectory))
                 {
                     Directory.CreateDirectory(SaveDirectory);
                 }
-
-                var save = new GameSaveDto
-                {
-                    SaveId = Guid.NewGuid().ToString(),
-                    SaveName = nomSauvegarde ?? $"Partie_{DateTime.Now:yyyyMMdd_HHmmss}",
-                    SaveDate = DateTime.Now,
-                    IndexJoueurCourant = partie.IndexJoueurCourant,
-                    NumeroManche = partie.NumeroManche,
-                    EstPartieReseau = estReseau,
-                    LocalPlayerIndex = localPlayerIndex,
-                    HostAddress = hostAddress ?? " 172.20.10.2",
-                    HostPort = hostPort > 0 ? hostPort : 12345,
-                    Joueur1 = CreerPlayerSaveDto(partie.Plateau1, controlJ1, partie.Jeu.Joueur1)    ,
-                    Joueur2 = CreerPlayerSaveDto(partie.Plateau2, controlJ2, partie.Jeu.Joueur2)
-                };
-
-                // Déterminer l'index du deck
-                save.Joueur1.IndexDeck = GetIndexDeck(partie.Jeu.Joueur1.PouvoirPassif);
-                save.Joueur2.IndexDeck = GetIndexDeck(partie.Jeu.Joueur2.PouvoirPassif);
 
                 // Nettoyer le nom de fichier
                 string cleanName = CleanFileName(save.SaveName);
@@ -84,6 +96,39 @@ namespace Gwent
 
                 System.Diagnostics.Debug.WriteLine($"[GameSaveManager] Partie sauvegardée avec succès!");
                 return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[GameSaveManager] Erreur écriture sauvegarde: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"[GameSaveManager] StackTrace: {ex.StackTrace}");
+                return false;
+            }
+        }
+
+        // Sauvegarde une partie en cours (version existante, conserve la compatibilité)
+        public static bool SauvegarderPartie(
+            PartieGwent partie,
+            PlateauJoueurControl controlJ1,
+            PlateauJoueurControl controlJ2,
+            bool estReseau,
+            int localPlayerIndex,
+            string hostAddress,
+            int hostPort,
+            string nomSauvegarde = null)
+        {
+            try
+            {
+                var save = ConstruireDtoSauvegarde(
+                    partie,
+                    controlJ1,
+                    controlJ2,
+                    estReseau,
+                    localPlayerIndex,
+                    hostAddress,
+                    hostPort,
+                    nomSauvegarde);
+
+                return EcrireSauvegarde(save);
             }
             catch (Exception ex)
             {
